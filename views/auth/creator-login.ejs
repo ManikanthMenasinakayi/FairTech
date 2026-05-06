@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="min-h-[80vh] flex items-center justify-center py-12 px-4">
+    <div class="max-w-md w-full space-y-8 bg-slate-900 p-10 rounded-3xl border border-slate-800">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-white">Creator Login</h2>
+            <p class="mt-2 text-sm text-slate-400">Welcome back to the Revenue Engine.</p>
+        </div>
+
+        <form class="mt-8 space-y-6" action="/auth/creator/login" method="POST">
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300">Email Address</label>
+                    <input name="email" type="email" required 
+                        class="block w-full px-4 py-3 mt-1 bg-slate-800 border border-slate-700 text-white rounded-xl focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300">Password</label>
+                    <input name="password" type="password" required 
+                        class="block w-full px-4 py-3 mt-1 bg-slate-800 border border-slate-700 text-white rounded-xl focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+            <button type="submit" class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-all">
+                Sign In
+            </button>
+        </form>
+    </div>
+</div>

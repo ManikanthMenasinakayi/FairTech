@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="min-h-[80vh] flex flex-col items-center justify-center px-4">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+        <h1 class="text-5xl font-extrabold text-white mb-4 tracking-tight">
+            FairaszsdefafxA<span class="text-indigo-500">FairTech</span> Revenue Engine
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            A transparent, manipulation-resistant platform for fair creator payouts and engagement tracking.
+        </p>
+    </div>
+
+    <!-- Role Selection Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+        
+        <!-- Creator Card -->
+        <div class="group bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-indigo-500 transition-all duration-300 shadow-2xl">
+            <div class="h-14 w-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-wand-magic-sparkles text-indigo-500 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-3">I am a Creator</h2>
+            <p class="text-slate-400 mb-8">
+                Access your transparency dashboard, track your engagement metrics, and view your revenue breakdown.
+            </p>
+            <a href="/auth/creator/login" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl transition-colors">
+                Get Started
+            </a>
+            <p class="text-center mt-4 text-sm text-slate-500">
+                New here? <a href="/auth/creator/signup" class="text-indigo-400 hover:underline">Create an account</a>
+            </p>
+        </div>
+
+        <!-- Admin Card -->
+        <div class="group bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-emerald-500 transition-all duration-300 shadow-2xl">
+            <div class="h-14 w-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-shield-halved text-emerald-500 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-3">I am an Admin</h2>
+            <p class="text-slate-400 mb-8">
+                Manage revenue pools, configure distribution rules, and monitor system integrity for manipulation.
+            </p>
+            <a href="/auth/admin/login" class="block text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl transition-colors border border-slate-700">
+                Admin Portal
+            </a>
+            <p class="text-center mt-4 text-sm text-slate-500 italic">
+                Restricted access only.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer Note -->
+    <div class="mt-20 text-slate-600 text-sm flex items-center gap-2">
+        <i class="fa-solid fa-lock"></i>
+        <span>Secure & Manipulation Resistant Infrastructure</span>
+    </div>
+</div>

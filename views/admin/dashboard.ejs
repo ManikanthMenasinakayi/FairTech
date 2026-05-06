@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="p-8">
+    <h1 class="text-3xl font-bold text-white mb-8">System Audit: All Channels</h1>
+
+    <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+        <table class="w-full text-left">
+            <thead class="bg-slate-800 text-slate-400 text-xs uppercase">
+                <tr>
+                    <th class="p-4">Channel Name</th>
+                    <th class="p-4">Creator</th>
+                    <th class="p-4 text-center">Views / Likes / Comments</th>
+                    <th class="p-4">Malicious Score</th>
+                    <th class="p-4">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-white">
+                <% for(let c of channels) { %>
+                    <tr class="<%= c.maliciousScore >= 7 ? 'bg-red-500/5' : '' %>">
+                        <td class="p-4 font-medium"><%= c.title %></td>
+                        <td class="p-4 text-slate-400 text-sm"><%= c.owner.name %></td>
+                        <td class="p-4 text-center font-mono text-xs">
+                            <%= c.views %> / <%= c.likes %> / <%= c.comments %>
+                        </td>
+                        <td class="p-4">
+                            <span class="px-2 py-1 rounded text-xs font-bold 
+                                <%= c.maliciousScore >= 7 ? 'text-red-400' : 'text-emerald-400' %>">
+                                <%= c.maliciousScore %> / 10
+                            </span>
+                        </td>
+                        <td class="p-4">
+                            <% if(c.status !== 'flagged') { %>
+                                <form action="/admin/project/<%= c._id %>/flag" method="POST">
+                                    <button class="text-xs bg-red-600 hover:bg-red-700 px-3 py-1 rounded">Flag</button>
+                                </form>
+                            <% } else { %>
+                                <span class="text-xs text-red-500 font-bold uppercase">FLAGGED</span>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
